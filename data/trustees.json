@@ -1,0 +1,32 @@
+[
+    {
+        "username": "Kreditor_1",
+        "password": "P@ssw0rd1",
+        "AdminId": 1,
+        "ProfileId": 1
+    },
+    {
+        "username": "Kreditor_2",
+        "password": "Secur3P@ss",
+        "AdminId": 1,
+        "ProfileId": 2
+    },
+    {
+        "username": "Kreditor_3",
+        "password": "Tru$t33P@ss",
+        "AdminId": 2,
+        "ProfileId": 3
+    },
+    {
+        "username": "Kreditor_4",
+        "password": "MyKreditor_P@ss",
+        "AdminId": 2,
+        "ProfileId": 4
+    },
+    {
+        "username": "Kreditor_5",
+        "password": "TeeP@ss123",
+        "AdminId": 1,
+        "ProfileId": 5
+    }
+]

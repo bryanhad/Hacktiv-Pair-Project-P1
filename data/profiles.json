@@ -1,0 +1,32 @@
+[
+    {
+      "firstName": "John",
+      "lastName": "Doe",
+      "phone": "1234567890",
+      "domicile": "New York"
+    },
+    {
+      "firstName": "Alice",
+      "lastName": "Smith",
+      "phone": "9876543210",
+      "domicile": "Los Angeles"
+    },
+    {
+      "firstName": "Michael",
+      "lastName": "Johnson",
+      "phone": "5551112222",
+      "domicile": "Chicago"
+    },
+    {
+      "firstName": "Sarah",
+      "lastName": "Davis",
+      "phone": "4449998888",
+      "domicile": "Houston"
+    },
+    {
+      "firstName": "David",
+      "lastName": "Brown",
+      "phone": "7773334444",
+      "domicile": "Miami"
+    }
+]

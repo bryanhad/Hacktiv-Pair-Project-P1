@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Understanding Financial Planning",
+        "imageUrl": "https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-1080x675.jpg",
+        "body": "Financial planning involves setting goals, understanding your current financial situation, and creating a plan to achieve your goals. It's essential for a secure financial future.",
+        "TrusteeId": 1
+    },
+    {
+        "title": "Investing in Stocks: A Beginner's Guide",
+        "imageUrl": "https://th.bing.com/th/id/OIG.CO2sHWK_IEYIwzXsC2hX",
+        "body": "Stock market investing can be a profitable venture, but it comes with risks. This guide provides an introduction to stock investing, tips for beginners, and risk management strategies.",
+        "TrusteeId": 2
+    },
+    {
+        "title": "Managing Debt: Tips for a Debt-Free Life",
+        "imageUrl": "https://imgv3.fotor.com/images/cover-photo-image/a-beautiful-girl-with-gray-hair-and-lucxy-neckless-generated-by-Fotor-AI.jpg",
+        "body": "Debt management is crucial for financial stability. Learn how to budget effectively, consolidate debt, negotiate with creditors, and create a plan to become debt-free.",
+        "TrusteeId": 3
+    },
+    {
+        "title": "Retirement Planning: Securing Your Golden Years",
+        "imageUrl": "https://gweb-research-imagen.web.app/compositional/An%20oil%20painting%20of%20a%20British%20Shorthair%20cat%20wearing%20a%20cowboy%20hat%20and%20red%20shirt%20skateboarding%20on%20a%20beach./1_.jpeg",
+        "body": "Planning for retirement is essential to ensure a comfortable and secure future. Explore retirement saving options, investment strategies, and steps to achieve a financially stable retirement.",
+        "TrusteeId": 2
+    },
+    {
+        "title": "Estate Planning and Your Legacy",
+        "imageUrl": "https://miro.medium.com/v2/resize:fit:1400/1*YMJDp-kqus7i-ktWtksNjg.jpeg",
+        "body": "Estate planning involves organizing your assets and affairs to ensure they are distributed according to your wishes after you pass away. Learn about wills, trusts, and estate planning best practices.",
+        "TrusteeId": 4
+    }
+]

@@ -1,0 +1,37 @@
+[
+    {
+        "firstName": "Emily",
+        "lastName": "Anderson",
+        "email": "emily.anderson@example.com",
+        "phone": "5551112233",
+        "idCardCopy": true
+    },
+    {
+        "firstName": "Mark",
+        "lastName": "Johnson",
+        "email": "mark.johnson@example.com",
+        "phone": "5559876543",
+        "idCardCopy": true
+    },
+    {
+        "firstName": "Jessica",
+        "lastName": "Smith",
+        "email": "jessica.smith@example.com",
+        "phone": "5557778888",
+        "idCardCopy": false
+    },
+    {
+        "firstName": "Andrew",
+        "lastName": "Clark",
+        "email": "andrew.clark@example.com",
+        "phone": "5554445555",
+        "idCardCopy": true
+    },
+    {
+        "firstName": "Olivia",
+        "lastName": "Martin",
+        "email": "olivia.martin@example.com",
+        "phone": "5552223333",
+        "idCardCopy": true
+    }
+]

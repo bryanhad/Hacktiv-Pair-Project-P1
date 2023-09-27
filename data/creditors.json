@@ -1,0 +1,67 @@
+[
+    {
+        "firstName": "John",
+        "lastName": "Doe",
+        "email": "john.doe@example.com",
+        "domicile": "New York",
+        "phone": "1234567890",
+        "AttorneyId": 1,
+        "claimType": "separatis",
+        "spt": true,
+        "idCardCopy": false,
+        "powerOfAttorney": true,
+        "TrusteeId": 2
+    },
+    {
+        "firstName": "Alice",
+        "lastName": "Smith",
+        "email": "alice.smith@example.com",
+        "domicile": "Los Angeles",
+        "phone": "9876543210",
+        "AttorneyId": 2,
+        "claimType": "preferen",
+        "spt": false,
+        "idCardCopy": true,
+        "powerOfAttorney": true,
+        "TrusteeId": 3
+    },
+    {
+        "firstName": "Michael",
+        "lastName": "Johnson",
+        "email": "michael.johnson@example.com",
+        "domicile": "Chicago",
+        "phone": "5551112222",
+        "AttorneyId": 3,
+        "claimType": "konkuren",
+        "spt": true,
+        "idCardCopy": true,
+        "powerOfAttorney": false,
+        "TrusteeId": 1
+    },
+    {
+        "firstName": "Sarah",
+        "lastName": "Davis",
+        "email": "sarah.davis@example.com",
+        "domicile": "Houston",
+        "phone": "4449998888",
+        "AttorneyId": 4,
+        "claimType": "preferen",
+        "spt": true,
+        "idCardCopy": true,
+        "powerOfAttorney": true,
+        "TrusteeId": 2
+    },
+    {
+        "firstName": "David",
+        "lastName": "Brown",
+        "email": "david.brown@example.com",
+        "domicile": "Miami",
+        "phone": "7773334444",
+        "AttorneyId": 5,
+        "claimType": "separatis",
+        "spt": false,
+        "idCardCopy": true,
+        "powerOfAttorney": false,
+        "TrusteeId": 4
+    }
+]
