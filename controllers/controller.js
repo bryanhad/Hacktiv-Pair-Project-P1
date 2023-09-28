@@ -67,8 +67,8 @@ class Controller {
   }
   static POST_formAddCreditor(req,res){
     // return res.send(res.body)
-    const {firstName, lastName, email, domicile, phone, claimAmount, spt, idCardCopy, powerOfAttorney, attorneyName, attorneyEmail, attorneyPhone, attorneyIdCard} = req.body
-    const creditorData = {firstName, lastName, email, domicile, phone, claimAmount, spt, idCardCopy, powerOfAttorney}
+    const {firstName, lastName, email, domicile, phone, claimType, claimAmount, spt, idCardCopy, powerOfAttorney, attorneyName, attorneyEmail, attorneyPhone, attorneyIdCard} = req.body
+    const creditorData = {firstName, lastName, email, domicile, phone, claimType, claimAmount, spt, idCardCopy, powerOfAttorney}
     const [attorneyFirstName, attorneyLastName] = attorneyName.split(" ")
     const attorneyData = {firstName: attorneyFirstName, lastName: attorneyLastName, email:attorneyEmail, phone: attorneyPhone, idCardCopy:attorneyIdCard}
     
@@ -79,7 +79,7 @@ class Controller {
         return Creditor.create({...creditorData, AttorneyId:newAttorneyId})
       })
       .then(newCreditor => {
-        res.send(newCreditor)
+        res.redirect("/details-trustee")
       })
       .catch((err) => {
         console.log(err);
