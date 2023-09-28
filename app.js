@@ -19,9 +19,7 @@ app.get('/details-trustee', Controller.GET_trusteeDetailsPage)
 
 app.get('/details-trustee/form-addCreditor', Controller.GET_formAddCreditor)
 
-// app.get('/details-trustee/form-addCreditor', Controller.GET_formAddCreditor)
-
-// app.post('/details-trustee/form-addCreditor', Controller.POST_updateFormTrustee)
+app.post('/details-trustee/form-addCreditor', Controller.POST_formAddCreditor)
 
 // router.get('/stores/:storeId/creditors/:creditorsId/edit', Controller.GET_editFormCreditor)
 

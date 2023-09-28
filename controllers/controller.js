@@ -27,7 +27,6 @@ class Controller {
       })
       .then(totalClaimAmount => {
         const totalClaimCreditors = totalClaimAmount[0].dataValues.totalClaimAmount
-
         res.render("detailsGuestPage", {creditorsArr, totalClaimCreditors})
       })
       .catch((err) => {
@@ -35,6 +34,7 @@ class Controller {
         res.send(err);
       });
   }
+
   static GET_trusteeDetailsPage(req, res){
     let creditorsArr
 
@@ -48,6 +48,8 @@ class Controller {
       .then(totalClaimAmount => {
         const totalClaimCreditors = totalClaimAmount[0].dataValues.totalClaimAmount
 
+        // return res.send(creditorsArr)
+        // console.log(creditorsArr[0].attorneyFullName, '<<<<<<')
         res.render("trusteePages/trusteeDetails", {creditorsArr, totalClaimCreditors})
       })
       .catch((err) => {
@@ -56,15 +58,34 @@ class Controller {
       });
   }
   static GET_formAddCreditor(req, res){
-        Creditor.findOne({include: {model: Attorney}})
-        .then((result) => {
-          res.render("addEmployee",{result})
-      })
-
+        Creditor.findAll()
+          res.render("trusteePages/formAddCreditor")
         .catch((err) => {
             console.log(err);
             res.send(err)
-        })
+    })
+  }
+  static POST_formAddCreditor(req,res){
+    // return res.send(res.body)
+    const {firstName, lastName, email, domicile, phone, claimAmount, spt, idCardCopy, powerOfAttorney, attorneyName, attorneyEmail, attorneyPhone, attorneyIdCard} = req.body
+    const creditorData = {firstName, lastName, email, domicile, phone, claimAmount, spt, idCardCopy, powerOfAttorney}
+    const [attorneyFirstName, attorneyLastName] = attorneyName.split(" ")
+    const attorneyData = {firstName: attorneyFirstName, lastName: attorneyLastName, email:attorneyEmail, phone: attorneyPhone, idCardCopy:attorneyIdCard}
+    
+    Attorney.create(attorneyData)
+      .then(newAttorney => {
+        const newAttorneyId = newAttorney.id
+
+        return Creditor.create({...creditorData, AttorneyId:newAttorneyId})
+      })
+      .then(newCreditor => {
+        res.send(newCreditor)
+      })
+      .catch((err) => {
+        console.log(err);
+        res.send(err)
+      })
   }
 }
+  
 module.exports = Controller;

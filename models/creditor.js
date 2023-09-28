@@ -17,7 +17,11 @@ module.exports = (sequelize, DataTypes) => {
     get fullName(){
       const fullName = `${this.firstName} ${this.lastName}`
       return fullName
+    }
 
+    get attorneyFullName() {
+      const {firstName, lastName} = this.Attorney
+      return `${firstName} ${lastName}`
     }
   }
 

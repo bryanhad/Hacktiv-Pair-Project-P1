@@ -46,6 +46,7 @@
             </tr>
         </thead>
         <tbody>
+          <% const {firstName, lastName} = creditorsArr[0].Attorney %>
             <% creditorsArr.forEach((creditor) => { %>
             <tr>
                 <td class="border px-4 py-2"><%= creditor.id %></td>
@@ -53,7 +54,8 @@
                 <td class="border px-4 py-2"><%= creditor.email %></td>
                 <td class="border px-4 py-2"><%= creditor.domicile %></td>
                 <td class="border px-4 py-2"><%= creditor.phone %></td>
-                <td class="border px-4 py-2"><%= creditor.Attorney.firstName+ ' ' +creditor.Attorney.lastName %></td>
+                
+                <td class="border px-4 py-2"><%= creditor.attorneyFullName %></td>
                 <td class="border px-4 py-2"><%= creditor.claimType %></td>
                 <td class="border px-4 py-2">
                     <a href='/details/:<%=creditor.id%>/creditors/<%=creditor.id%>/edit' class="btn btn-active btn-accent">Edit</a>
