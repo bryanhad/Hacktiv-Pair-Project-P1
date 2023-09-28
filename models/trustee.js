@@ -11,6 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Trustee.belongsTo(models.Admin)
+      this.hasMany(models.Creditor)
+      this.belongsTo(models.Admin)
+      this.belongsTo(models.Profile)
     }
   }
   Trustee.init({

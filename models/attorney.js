@@ -11,8 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      this.hasMany(models.Creditor)
     }
   }
+
   Attorney.init({
     firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,

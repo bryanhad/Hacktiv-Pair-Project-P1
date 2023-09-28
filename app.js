@@ -13,6 +13,23 @@ app.use(express.static(path.join(process.cwd(), 'public')));
 
 app.get('/', Controller.GET_homePage)
 
+app.get('/details', Controller.GET_detailsPage)
+
+app.get('/details-trustee', Controller.GET_trusteeDetailsPage)
+
+app.get('/details-trustee/form-addCreditor', Controller.GET_formAddCreditor)
+
+// app.get('/details-trustee/form-addCreditor', Controller.GET_formAddCreditor)
+
+// app.post('/details-trustee/form-addCreditor', Controller.POST_updateFormTrustee)
+
+// router.get('/stores/:storeId/creditors/:creditorsId/edit', Controller.GET_editFormCreditor)
+
+// router.post('/stores/:storeId/creditors/:creditorsId/edit', Controller.POST_editFormCreditor)
+
+// router.get('/stores/:storeId/creditors/:creditorsId/delete', Controller.deleteEmployee)
+
+
 app.route('/login')
     .get(TrusteeController.GET_loginForm)
 

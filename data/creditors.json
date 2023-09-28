@@ -10,7 +10,8 @@
         "spt": true,
         "idCardCopy": false,
         "powerOfAttorney": true,
-        "TrusteeId": 2
+        "TrusteeId": 2,
+        "claimAmount": 12000
     },
     {
         "firstName": "Alice",
@@ -23,7 +24,8 @@
         "spt": false,
         "idCardCopy": true,
         "powerOfAttorney": true,
-        "TrusteeId": 3
+        "TrusteeId": 3,
+        "claimAmount": 15000
     },
     {
         "firstName": "Michael",
@@ -36,7 +38,8 @@
         "spt": true,
         "idCardCopy": true,
         "powerOfAttorney": false,
-        "TrusteeId": 1
+        "TrusteeId": 1,
+        "claimAmount": 20000
     },
     {
         "firstName": "Sarah",
@@ -49,7 +52,8 @@
         "spt": true,
         "idCardCopy": true,
         "powerOfAttorney": true,
-        "TrusteeId": 2
+        "TrusteeId": 2,
+        "claimAmount": 40000
     },
     {
         "firstName": "David",
@@ -62,6 +66,7 @@
         "spt": false,
         "idCardCopy": true,
         "powerOfAttorney": false,
-        "TrusteeId": 4
+        "TrusteeId": 4,
+        "claimAmount": 50000
     }
 ]

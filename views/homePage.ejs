@@ -1,10 +1,29 @@
-<%- include('components/Header') %>
+<%- include("components/Header")  %>
+<%- include("components/Navbar")  %> 
 
-<h1 class="text-2xl font-bold text-slate-600">INI HOME PAGE LOH</h1>
+<div>
+    <div>
+        <div class="flex flex-col items-center mb-8">
+            <div class="text-4xl font-bold mb-4">Nama Perusahaan</div>
+            <div class="max-w-3xl text-center mb-8">
+               <h2>perusahaan ini dalam kondisi pailit, perTanggal... </h2>
+            </div>
+            <a href="/details" class="bg-blue-500 text-white py-2 px-8 rounded-full transition duration-300 hover:bg-blue-700">Detail Perusahaan</a>
+        </div>
+    </div>
+    <div>
+        <div class="grid grid-cols-3 gap-5">
+            <% blogs.forEach(blog => { %>
+                <div class="col-span-1">
+                    <%- include('components/blog', {
+                        imageUrl: blog.imageUrl,
+                        title: blog.title
+                    }) %>
+                </div>
+            <% }) %>
+        </div>
+    </div>
 
-<%- include('components/LinkButton', {
-    to: '/login',
-    text: 'LOGIN'
-}) %>
-
-<%- include('components/Footer') %>
+</div>
+            
+       

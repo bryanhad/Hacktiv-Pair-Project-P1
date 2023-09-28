@@ -16,6 +16,7 @@ module.exports = (sequelize, DataTypes) => {
   Profile.init({
     firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,
+    imageUrl: DataTypes.STRING,
     phone: DataTypes.STRING,
     domicile: DataTypes.TEXT
   }, {

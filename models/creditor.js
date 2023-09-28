@@ -11,20 +11,29 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      this.belongsTo(models.Attorney)
+    }
+
+    get fullName(){
+      const fullName = `${this.firstName} ${this.lastName}`
+      return fullName
+
     }
   }
+
   Creditor.init({
     firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,
     email: DataTypes.STRING,
     domicile: DataTypes.STRING,
     phone: DataTypes.STRING,
-    AttourneyId: DataTypes.INTEGER,
+    AttorneyId: DataTypes.INTEGER,
     claimType: DataTypes.STRING,
     spt: DataTypes.BOOLEAN,
     idCardCopy: DataTypes.BOOLEAN,
     powerOfAttorney: DataTypes.BOOLEAN,
-    TrusteeId: DataTypes.INTEGER
+    TrusteeId: DataTypes.INTEGER,
+    claimAmount: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Creditor',
