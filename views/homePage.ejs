@@ -2,9 +2,25 @@
 
 <h1 class="text-2xl font-bold text-slate-600">INI HOME PAGE LOH</h1>
 
-<%- include('components/LinkButton', {
-    to: '/login',
-    text: 'LOGIN'
-}) %>
+<% if (locals.error) { %>
+    <p class="text-error mt-2 text-center animate__animated animate__shakeX"><%= locals.error %></p>
+<% } %>
+
+<% if (locals.trustee) { %>
+    <a class="btn btn-error text-white" href="/trustee/logout">Kurator LOGOUT</a>
+<% } %>
+<% if (locals.admin) { %>
+    <a class="btn btn-error text-white" href="/admin/logout">Admin LOGOUT</a>
+<% } %>
+<% if (!locals.trustee && !locals.admin) { %>
+    <%- include('components/LinkButton', {
+        to: '/login',
+        text: 'LOGIN'
+    }) %>
+    <%- include('components/LinkButton', {
+        to: '/login-admin',
+        text: 'ADMIN LOGIN'
+    }) %>
+<% } %>
 
 <%- include('components/Footer') %>

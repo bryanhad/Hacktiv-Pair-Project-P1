@@ -1,6 +1,9 @@
 class Controller {
     static GET_homePage(req, res) {
-        res.render('homePage')
+        const {error} = req.query
+        const {trusteeUsername, adminUsername} = req.session
+
+        res.render('homePage', {error, trustee:trusteeUsername, admin:adminUsername})
     }
 }
 

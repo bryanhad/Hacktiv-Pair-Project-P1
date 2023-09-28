@@ -2,12 +2,20 @@
 
 <form action="" method="POST" class="flex flex-col items-center shadow-xl p-4">
     <h1 class="text-slate-800 text-3xl p-4">ADMIN LOGIN</h1>
-    
-    <label for="email" class="text-slate-500">Email</label>
-    <input name="email" type="email" id="email" placeholder="siPalingAdmin@gmail.com" class="input input-bordered w-full max-w-xs" />
+
+    <label for="username" class="text-slate-500">Username</label>
+    <input name="username" type="text" id="username" placeholder="siPalingAdminGanteng" class="input input-bordered w-full max-w-xs" 
+        <% if (locals.username) { %>
+            value="<%= locals.username %>"
+        <% } %>
+    />
     
     <label for="password" class="text-slate-500 mt-3">Password</label>
     <input name="password" type="password" id="password" placeholder="****" class="input input-bordered w-full max-w-xs" />
+
+    <% if (locals.error) { %>
+        <p class="text-error mt-2 text-center animate__animated animate__shakeX"><%= locals.error %></p>
+    <% } %>
 
     <button type="submit" class="btn btn-accent text-white mt-6">LOGIN</button>
 

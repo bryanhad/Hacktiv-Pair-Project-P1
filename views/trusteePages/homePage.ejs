@@ -1,16 +1,10 @@
 <%- include('../components/Header') %>
 
-
-
 <% if (locals.error) { %>
     <p class="text-error mt-2 text-center animate__animated animate__shakeX"><%= locals.error %></p>
 <% } %>
 
-INI HOMEPAGE ADMIN
-<%- include('../components/LinkButton', {
-    to: '/admin/add-trustee',
-    text: 'ADD NEW Kurator'
-}) %>
-<a href="admin/logout" class="btn btn-primary">ADMIN LOGOUT</a>
+INI HOME PAGE TRUSTEE
+<a href="trustee/logout" class="btn btn-primary">LOGOUT</a>
 
 <%- include('../components/Footer') %>

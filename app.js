@@ -1,31 +1,32 @@
 const express = require('express')
 const app = express()
-const PORT = 3000
 const path = require('path')
-const Controller = require('./controllers/controller')
-const TrusteeController = require('./controllers/TrusteeController')
-const AdminController = require('./controllers/adminController')
+const session = require('express-session')
+const { mainRoutes } = require('./routes')
+
+const PORT = 3000
 
 app.use(express.urlencoded({ extended: true }))
 app.set('view engine', 'ejs')
-app.use(express.static(path.join(process.cwd(), 'public')));
+app.use(express.static(path.join(process.cwd(), 'public')))
+app.use(session({
+    secret: 'tikus got',
+    resave: false,
+    saveUninitialized: false,
+    cookie: { 
+        secure: false,
+        sameSite: true
+    }
+}))
 
 
-app.get('/', Controller.GET_homePage)
+//middleware!
+app.use((req, res, next) => {
+    console.log(req.session)
+    next()
+})
 
-app.route('/login')
-    .get(TrusteeController.GET_loginForm)
-
-app.route('/login-admin')
-    .get(AdminController.GET_loginForm)
-    .post(AdminController.POST_loginForm)
-
-app.get('/admin', AdminController.GET_homePage)
-
-app.route('/admin/add-trustee')
-    .get(TrusteeController.GET_registerForm)
-    .post()
-
+app.use('/', mainRoutes)
 
 app.listen(PORT, () => {
     console.log(`App is listening on port ${PORT}, url: http://localhost:${PORT}`)

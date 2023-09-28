@@ -1,0 +1,18 @@
+<%- include('../components/Header') %>
+
+<form action="" method="POST" class="flex flex-col items-center shadow-xl p-4 gap-3">
+    <h1 class="text-slate-800 text-3xl p-3">ADD ADMIN</h1>
+
+    <label for="username" class="text-slate-500">Username</label>
+    <input name="username" type="text" id="username" placeholder="siGanteng" class="input input-bordered w-full max-w-xs" />
+
+    <label for="email" class="text-slate-500">Email</label>
+    <input name="email" type="text" id="email" placeholder="Ucok@gmail.com" class="input input-bordered w-full max-w-xs" />
+
+    <label for="password" class="text-slate-500 mt-3">Password</label>
+    <input name="password" type="password" id="password" placeholder="****" class="input input-bordered w-full max-w-xs" />
+
+    <button type="submit" class="btn btn-accent text-white mt-6">Add New Admin</button>
+</form>
+
+<%- include('../components/Footer') %>

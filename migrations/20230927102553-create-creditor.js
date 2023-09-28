@@ -43,6 +43,9 @@ module.exports = {
             powerOfAttorney: {
                 type: Sequelize.BOOLEAN,
             },
+            claimAmount: {
+                type: Sequelize.INTEGER,
+            },
             TrusteeId: {
                 type: Sequelize.INTEGER,
                 references: {
