@@ -1,0 +1,90 @@
+<%- include("../components/Header")  %>
+ 
+<!-- navbar -->
+<nav>
+    <div class="navbar bg-accent">
+        <a class="btn btn-ghost normal-case text-xl">Nama Perusahaan</a>
+      </div>
+</nav>
+
+<body class="w-1/3 p-10 bg-gray-100 rounded-lg shadow-md">
+    <div class="p-10 bg-white rounded-lg shadow-lg text-center">
+      <h1 class="text-2xl font-bold mb-4">Add New Creditor</h1>
+      <form method="post" action="/details-trustee/form-addCreditor">
+        <div class="flex flex-col mb-4">
+          <label for="firstName" class="mb-1 text-left">First Name</label>
+          <input type="text" name="firstName" class="form-input" placeholder="Enter your first name" value="<%=  %>">
+        </div>
+  
+        <div class="flex flex-col mb-4">
+          <label for="lastName" class="mb-1 text-left">Last Name</label>
+          <input type="text" name="lastName" class="form-input" placeholder="Enter your last name">
+        </div>
+  
+        <div class="flex flex-col mb-4">
+          <label for="email" class="mb-1 text-left">Email</label>
+          <input type="email" name="email" class="form-input" placeholder="Enter your email">
+        </div>
+  
+        <div class="flex flex-col mb-4">
+          <label for="domicile" class="mb-1 text-left">Domicile</label>
+          <input type="text" name="domicile" class="form-input" placeholder="Enter your domicile">
+        </div>
+  
+        <div class="flex flex-col mb-4">
+          <label for="phone" class="mb-1 text-left">Phone</label>
+          <input type="tel" id="phone" name="phone" class="form-input" placeholder="Enter your phone number">
+        </div>
+        <div class="flex flex-col mb-4">
+          <label for="phone" class="mb-1 text-left">claim Type</label>
+          <input type="text" id="phone" name="claimType" class="form-input" placeholder="Enter your claimType here">
+        </div>
+  
+        <div class="flex flex-col mb-4">
+          <label for="claimAmount" class="mb-1 text-left">Claim Amount</label>
+          <input type="number" id="claimAmount" name="claimAmount" class="form-input" placeholder="Enter claim amount">
+        </div>
+
+            <div class="flex items-center">
+              <input type="checkbox" id="checkbox1" name="spt" class="mr-2">
+              <label for="checkbox1" class="mr-4">SPT</label>
+              </div>
+              <div class="mb-1 text-left">
+                  <input type="checkbox" id="checkbox2" name="idCardCopy" class="mr-2">
+                  <label for="checkbox2" class="mr-4">ID CARD COPY</label>
+              </div>
+              <div class="mb-1 text-left">
+                  <input type="checkbox" id="checkbox3" name="powerOfAttorney" class="mr-2">
+                  <label for="checkbox3">Power Of Attorney</label>
+              </div>
+              
+              <div class="flex flex-col mb-4">
+                  <label for="attorneyName" class="mb-1 text-left">Attorney Name</label>
+                  <input type="text" name="attorneyName" class="form-input" placeholder="Enter attorney's name">
+                </div>
+                
+                <div class="flex flex-col mb-4">
+                    <label for="attorneyEmail" class="mb-1 text-left">Attorney Email</label>
+                    <input type="text" name="attorneyEmail" class="form-input" placeholder="Enter attorney's Email">
+                </div>
+                
+                <div class="flex flex-col mb-4">
+                    <label for="attorneyName" class="mb-1 text-left">Attorney Phone</label>
+                    <input type="text" name="attorneyPhone" class="form-input" placeholder="Enter attorney's phone">
+                </div>
+
+                <div class="mb-1 text-left">
+                    <input type="checkbox" id="checkbox2" name="attorneyIdCard" class="mr-2">
+                    <label for="checkbox2" class="mr-4">Attorney Id Card Copy</label>
+                </div>
+                
+            </div>
+              
+  
+        <button type="submit" class="btn btn-active btn-accent">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
+            
+       

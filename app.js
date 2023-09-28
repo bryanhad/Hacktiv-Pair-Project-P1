@@ -21,11 +21,11 @@ app.get('/details-trustee/form-addCreditor', Controller.GET_formAddCreditor)
 
 app.post('/details-trustee/form-addCreditor', Controller.POST_formAddCreditor)
 
-// router.get('/stores/:storeId/creditors/:creditorsId/edit', Controller.GET_editFormCreditor)
+app.get('/details-trustee/:id/creditors/:creditorId/edit', Controller.GET_editFormCreditor)
 
-// router.post('/stores/:storeId/creditors/:creditorsId/edit', Controller.POST_editFormCreditor)
+app.post('/details-trustee/:id/creditors/:creditorId/edit', Controller.POST_editFormCreditor)
 
-// router.get('/stores/:storeId/creditors/:creditorsId/delete', Controller.deleteEmployee)
+app.get('/details-trustee/:id/creditors/:creditorsId/delete', Controller.deleteCreditor)
 
 
 app.route('/login')

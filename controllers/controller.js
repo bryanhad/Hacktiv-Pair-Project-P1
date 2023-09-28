@@ -39,7 +39,7 @@ class Controller {
     let creditorsArr
 
     Creditor.findAll({
-      include: {model: Attorney, attributes: ['firstName', 'lastName']}
+      include: {model: Attorney, attributes: ['id','firstName', 'lastName']}
     })
       .then((creditors) => {
         creditorsArr = creditors
@@ -85,7 +85,60 @@ class Controller {
         console.log(err);
         res.send(err)
       })
-  }
+    }
+    static GET_editFormCreditor(req, res){
+      // const { id, creditorId } = req.params;
+      //   let option = {
+      //       include: {
+      //         model: Trustee,
+      //         where: {id: id}
+      //       }
+      //   }
+      //   option.where = {id: +creditorId}
+      //   Creditor.findOne(option)
+      //       .then((result) => {
+      //         // res.send("masuk")
+      //           res.render("editFormCreditor",{result})
+      //       })
+      //       .catch((err) => {
+      //           console.log(err);
+      //           res.send(err)
+      //       })
+    }
+    static POST_editFormCreditor(req, res){
+      const { id, creditorId } = req.params; 
+      const {firstName, lastName, email, domicile, phone, claimType, claimAmount, spt, idCardCopy, powerOfAttorney, attorneyName, attorneyEmail, attorneyPhone, attorneyIdCard} = req.body
+      const updateCreditorData = {firstName, lastName, email, domicile, phone, claimType, claimAmount, spt, idCardCopy, powerOfAttorney}
+      const [attorneyFirstName, attorneyLastName] = attorneyName.split(" ")
+      const attorneyData = {firstName: attorneyFirstName, lastName: attorneyLastName, email:attorneyEmail, phone: attorneyPhone, idCardCopy:attorneyIdCard}
+      Creditor.update(
+        { updateCreditorData },
+        { where: {id: +creditorId}}
+    )
+        .then((result) => {
+            res.redirect(`/details-trustee`);
+        })
+        .catch((err) => {
+          console.log(err);
+          res.send(err)
+      })
+    }
+    static deleteCreditor(req,res){
+      const { id,creditorId } = req.params;
+      Creditor.findByPk(+creditorId)
+        .then((result) => {
+          return Creditor.destroy({ where: { id: +creditorId } });
+        })
+        .then((del) => {
+          console.log("delete");
+          //res.send(del)
+          res.redirect('/details-trustee');
+        })
+          .catch((err) => {
+            console.log(err);
+            res.send(err);
+          });
+    }
 }
   
 module.exports = Controller;

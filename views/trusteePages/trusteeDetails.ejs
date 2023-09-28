@@ -54,12 +54,11 @@
                 <td class="border px-4 py-2"><%= creditor.email %></td>
                 <td class="border px-4 py-2"><%= creditor.domicile %></td>
                 <td class="border px-4 py-2"><%= creditor.phone %></td>
-                
                 <td class="border px-4 py-2"><%= creditor.attorneyFullName %></td>
                 <td class="border px-4 py-2"><%= creditor.claimType %></td>
                 <td class="border px-4 py-2">
-                    <a href='/details/:<%=creditor.id%>/creditors/<%=creditor.id%>/edit' class="btn btn-active btn-accent">Edit</a>
-                    <a href="/details/<%=creditor.id%>/creditor/<%=creditor.id%>/delete" class="btn btn-active btn-accent">Delete</a>
+                    <a href='/details-trustee/<%=creditor.id%>/creditors/<%=creditor.Attorney.id%>/edit' class="btn btn-active btn-accent">Edit</a>
+                    <a href="/details-trustee/<%=creditor.id%>/creditor/<%=creditor.Attorney.id%>/delete" class="btn btn-active btn-accent">Delete</a>
                 </td>
             </tr>
             <% }) %>
