@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
          * The `models/index` file will call this method automatically.
          */
         static associate(models) {
-            // define association here
+            this.hasOne(models.Trustee)
         }
     }
     Profile.init(
@@ -74,7 +74,7 @@ module.exports = (sequelize, DataTypes) => {
         {
             hooks: {
                 beforeCreate: (instance) => {
-                    const DEFAULT_PROFILE_PICTURE = 'https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg'
+                    const DEFAULT_PROFILE_PICTURE = `https://source.boringavatars.com/beam/40/${instance.firstName}`
                     instance.imageUrl = DEFAULT_PROFILE_PICTURE
                 }
             },

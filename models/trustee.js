@@ -10,7 +10,17 @@ module.exports = (sequelize, DataTypes) => {
          * The `models/index` file will call this method automatically.
          */
         static associate(models) {
-            // define association here
+            this.hasMany(models.Blog)
+            this.belongsTo(models.Profile)
+        }
+
+        get fullName() {
+            const {firstName, lastName} = this.Profile
+            return `${firstName} ${lastName}`
+        }
+
+        get profilePicture() {
+            return this.Profile.imageUrl
         }
     }
     Trustee.init(

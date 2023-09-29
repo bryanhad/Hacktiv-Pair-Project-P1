@@ -4,8 +4,12 @@ const TrusteeController = require('../controllers/TrusteeController')
 const router = express.Router()
 
 router.use((req, res, next) => {
-    if (!req.session.adminUsername) {
-        const errorMsg = 'You need to login as an admin!'
+    if (!req.session.user) {
+        const errorMsg = 'You need to login as an admin'
+        return res.redirect(`/login-admin?error=${errorMsg}`)
+    }
+    if (!req.session.user.isAdmin) {
+        const errorMsg = 'You have logged in as a Kurator'
         return res.redirect(`/login-admin?error=${errorMsg}`)
     }
     next()

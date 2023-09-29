@@ -17,6 +17,7 @@ module.exports = (sequelize, DataTypes) => {
         {
             username: DataTypes.STRING,
             email: DataTypes.STRING,
+            imageUrl: DataTypes.STRING,
             password: DataTypes.STRING,
         },
         {
@@ -25,6 +26,9 @@ module.exports = (sequelize, DataTypes) => {
                     const salt = bcrypt.genSaltSync(8)
                     const hashedPassword = bcrypt.hashSync(instance.password, salt)
                     instance.password = hashedPassword
+
+                    const DEFAULT_PROFILE_PICTURE = `https://source.boringavatars.com/beam/40/${instance.username}`
+                    instance.imageUrl = DEFAULT_PROFILE_PICTURE
                 }
             },
             sequelize,

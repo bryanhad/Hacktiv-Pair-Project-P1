@@ -19,29 +19,18 @@
         <% blogs.forEach(blog => { %>
             <div class="col-span-1">
                 <%- include('components/blog', {
+                    blogId: blog.id,
                     imageUrl: blog.imageUrl,
-                    title: blog.title
+                    title: blog.title,
+                    body: blog.body,
+                    profilePicture: blog.Trustee.profilePicture,
+                    writersName: blog.Trustee.fullName,
+                    createdDate: blog.createdDate,
+                    createdTime: blog.createdTime
                 }) %>
             </div>
         <% }) %>
     </div>
 </div>
-
-<% if (locals.trustee) { %>
-    <a class="btn btn-error text-white" href="/trustee/logout">Kurator LOGOUT</a>
-<% } %>
-<% if (locals.admin) { %>
-    <a class="btn btn-error text-white" href="/admin/logout">Admin LOGOUT</a>
-<% } %>
-<% if (!locals.trustee && !locals.admin) { %>
-    <%- include('components/LinkButton', {
-        to: '/login',
-        text: 'LOGIN'
-    }) %>
-    <%- include('components/LinkButton', {
-        to: '/login-admin',
-        text: 'ADMIN LOGIN'
-    }) %>
-<% } %>
 
 <%- include('components/Footer') %>

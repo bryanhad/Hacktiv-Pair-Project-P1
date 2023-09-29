@@ -4,7 +4,9 @@ const bcrypt = require('bcryptjs')
 class AdminController {
     static GET_homePage(req, res) {
         const {error} = req.query
-        res.render('adminPages/homePage', {error})
+        const { user } = req.session
+
+        res.render('adminPages/homePage', {error, user})
     }
 
     static GET_loginForm(req, res) {
@@ -15,7 +17,7 @@ class AdminController {
 
         const {error, username} = req.query
 
-        res.render('adminPages/loginForm', {error, username})
+        res.render('adminPages/loginForm', {error, username, inLogin:true})
     }
 
     static POST_login(req, res) {
@@ -32,7 +34,11 @@ class AdminController {
                 if (!isValid) return res.redirect(`/login-admin?username=${username}&error=${errorMsg}`)
 
                 // valid admin!
-                req.session.adminUsername = admin.username
+                req.session.user = {
+                    username: admin.username,
+                    profilePicture: admin.imageUrl,
+                    isAdmin: true
+                }
                 
                 res.redirect('/admin')
             })
