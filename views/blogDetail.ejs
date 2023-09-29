@@ -14,7 +14,7 @@
             <%- include('./components/WriterInfo', {
                 profilePicture: blog.writersProfilePicture,
                 name: blog.writersFullName,
-                createdDate: blog.createdDate,
+                createdDate: blog.createdDate(),
                 createdTime: blog.createdTime
             }) %>
         </div>

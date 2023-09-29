@@ -33,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
             })
         }
 
-        get createdDate() {
+        createdDate() {
             return dateToString(this.createdAt).date
         }
 
