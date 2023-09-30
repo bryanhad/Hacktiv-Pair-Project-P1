@@ -48,6 +48,10 @@ module.exports = (sequelize, DataTypes) => {
         get writersProfilePicture() {
             return this.Trustee.profilePicture
         }
+
+        bodyToArray() {
+            return this.body.split('\n\n')
+        }
     }
     Blog.init(
         {
