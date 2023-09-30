@@ -1,0 +1,16 @@
+<div class="flex items-center gap-3">
+    <!-- Profile Picture -->
+    <div class="max-h-[40px] max-w-[40px] grid place-content-center rounded-full overflow-hidden">
+        <img class="object-cover w-full h-full" src="<%= profilePicture %>" alt="<%= name %>'s profile">
+    </div>
+    <!-- Writer's Detail -->
+    <div>
+        <h4>
+            <span class="font-semibold"><%= name %></span>
+        </h4>
+        <p class="text-sm text-slate-400/80">
+            <%= createdDate %> 
+            <i>, <%= createdTime %></i>
+        </p>
+    </div>
+</div>

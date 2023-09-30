@@ -1,0 +1,33 @@
+<div class="flex items-center gap-3">
+    <!-- Profile Picture -->
+    <div class="max-h-[40px] max-w-[40px] grid place-content-center rounded-full overflow-hidden">
+        <img class="object-cover w-full h-full" src="<%= profilePicture %>" alt="<%= name %>'s profile">
+    </div>
+    <!-- Writer's Detail -->
+    <div class="w-full relative group">
+        <div class="cursor-pointer p-2 flex flex-col gap-2">
+            <div class="flex gap-2 text-slate-500 hover:text-slate-400 duration-300">
+                <h4><%= name %></h4>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+        </div>
+        <div class="max-h-[0px] group-hover:max-h-[120px] duration-300 overflow-hidden  w-full absolute bottom-0 translate-y-[100%] bg-white shadow-md rounded-b-lg">
+            <div class="flex flex-col gap-3 p-3">
+                <a  
+                    href="<%= profileUrl %>" 
+                    class="flex gap-2 items-center text-slate-500 p-2 hover:scale-[105%] duration-200"
+                    >
+                    <i class="fa-regular fa-user"></i>
+                    Profile
+                </a>
+                <a 
+                    href="<%= logoutUrl %>" 
+                    class="flex gap-2 items-center text-slate-500 p-2 hover:scale-[105%] duration-200"
+                    >
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

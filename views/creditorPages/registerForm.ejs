@@ -1,0 +1,152 @@
+<%- include('../components/Header') %>
+
+<form action="" method="POST" class="flex flex-col items-center shadow-xl p-4 gap-3">
+    <h1 class="text-slate-800 text-3xl p-3">Add New Creditor</h1>
+
+    <div class="flex gap-3">
+        <div class="flex flex-col gap-2 flex-[1]">
+            <% let prev1 = '' %>
+            <% if (locals.validation) { %>
+                <% prev1 = locals.validation.firstName.prevValue %>
+            <% } %>
+            <label for="firstName" class="text-slate-500">First Name</label>
+            <input value="<%=prev1 %>" name="firstName" type="text" id="firstName" placeholder="siGanteng" class="input input-bordered w-full max-w-xs" />
+            <% if (locals.validation) { %>
+                <% if (locals.validation.firstName.errorMessage) { %>
+                    <p class="text-error text-sm"><%= locals.validation.firstName.errorMessage %></p>
+                <% } %>
+            <% } %>
+        </div>
+        
+        <div class="flex flex-col gap-2 flex-[1]">
+            <label for="lastName" class="text-slate-500">Last Name</label>
+            <input name="lastName" type="text" id="lastName" placeholder="siGanteng" class="input input-bordered w-full max-w-xs" />
+        </div>
+    </div>
+    
+    <% let prev2 = '' %>
+    <% if (locals.validation) { %>
+        <% prev2 = locals.validation.email.prevValue %>
+    <% } %>
+        <label for="email" class="text-slate-500">Email</label>
+        <input value="<%= prev2 %>" name="email" type="text" id="email" placeholder="siGanteng@gmail.com" class="input input-bordered w-full max-w-xs" />
+    <% if (locals.validation) { %>
+        <% if (locals.validation.email.errorMessage) { %>
+            <p class="text-error text-sm"><%= locals.validation.email.errorMessage %></p>
+        <% } %>
+    <% } %>
+
+    <% let prev3 = '' %>
+    <% if (locals.validation) { %>
+        <% prev3 = locals.validation.domicile.prevValue %>
+    <% } %>
+        <label for="domicile" class="text-slate-500">Domicile</label>
+        <input value="<%= prev3 %>" name="domicile" type="text" id="domicile" placeholder="Jl. Mangga Besar No.3" class="input input-bordered w-full max-w-xs" />
+    <% if (locals.validation) { %>
+        <% if (locals.validation.domicile.errorMessage) { %>
+            <p class="text-error text-sm"><%= locals.validation.domicile.errorMessage %></p>
+        <% } %>
+    <% } %>
+
+    <% let prev4 = '' %>
+    <% if (locals.validation) { %>
+        <% prev4 = locals.validation.phone.prevValue %>
+    <% } %>
+    <label for="phone" class="text-slate-500">Phone Number</label>
+    <input value="<%= prev4 %>" name="phone" type="number" id="phone" placeholder="08526161625" class="input input-bordered w-full max-w-xs" />
+    <% if (locals.validation) { %>
+        <% if (locals.validation.phone.errorMessage) { %>
+            <p class="text-error text-sm"><%= locals.validation.phone.errorMessage %></p>
+        <% } %>
+    <% } %>
+
+    <% let prev5 = '' %>
+    <% if (locals.validation) { %>
+        <% prev5 = locals.validation.claimAmount.prevValue %>
+    <% } %>
+    <label for="claimAmount" class="text-slate-500">Claim Amount</label>
+    <div class="flex">
+        <div class="p-4 text-white bg-green-500 rounded-l-md">
+            Rp
+        </div>
+        <input value="<%= prev5 %>" name="claimAmount" type="number" id="claimAmount" placeholder="50000" class="p-4 border border-slate-300 text-slate-400 focus:outline-none rounded-r-md" />
+    </div>
+    <% if (locals.validation) { %>
+        <% if (locals.validation.claimAmount.errorMessage) { %>
+            <p class="text-error text-sm"><%= locals.validation.claimAmount.errorMessage %></p>
+        <% } %>
+    <% } %>
+
+    <% let prev6 = '' %>
+    <% if (locals.validation) { %>
+        <% prev6 = locals.validation.claimType.prevValue %>
+    <% } %>
+    <label for="claimType" class="text-slate-500">Creditor Type</label>
+    <select name="claimType" id="claimType" class="select border p-3 rounded-md select-bordered w-full max-w-xs">
+        <% const claimTypes = ['Separatis', 'Preferen', 'Konkuren'] %>
+        <option value="" hidden selected>Select Creditor Type</option>
+        <% claimTypes.forEach(type => { %>
+            <option  
+                <% if (type === prev6) { %>
+                    selected
+                <% } %> 
+            value="<%= type %>"><%= type %></option>
+        <% }) %>
+    </select>
+    <% if (locals.validation) { %>
+        <% if (locals.validation.claimType.errorMessage) { %>
+            <p class="text-error text-sm"><%= locals.validation.claimType.errorMessage %></p>
+        <% } %>
+    <% } %>
+
+    <label for="claimType" class="text-slate-500">Important Documents</label>
+    <div class="flex gap-3">
+        <% const documents = ['spt', 'idCardCopy', 'powerOfAttorney'] %>
+        <% documents.forEach((document, i) => { %>
+            <% let prevValueSiIni = '' %>
+            <% if (locals.validation) { %>
+                <% prevValueSiIni = locals.validation[document].prevValue %>
+            <% } %>
+            <div class="form-control rounded-full shadow-md">
+                <label class="label cursor-pointer flex gap-3 text-slate-400 px-3">
+                    <span class="label-text">
+                        <% if (document === 'spt') { %>
+                            SPT
+                        <% } else { %>
+                            <%= splitCamelCase(document) %>
+                        <% } %>
+                    </span> 
+                    <input value="true" name="<%= document %>" type="checkbox" class="checkbox checkbox-primary" 
+                        <% if (prevValueSiIni === true) { %>
+                            checked
+                        <% } %>
+                    />
+                </label>
+            </div>
+        <% }) %>
+    </div>
+
+    <div class="m-2 flex flex-col gap-2">
+        <label for="attorneyName" class="text-slate-500">Attorney Name</label>
+        <input name="attorneyName" type="text" id="attorneyName" placeholder="Ahmad Gunaedi" class="input input-bordered w-full max-w-xs" />
+        
+        <label for="attorneyEmail" class="text-slate-500">Attorney Email</label>
+        <input name="attorneyEmail" type="text" id="attorneyEmail" placeholder="AhmadG69@gmail.com" class="input input-bordered w-full max-w-xs" />
+
+        <label for="attorneyPhone" class="text-slate-500">Attorney Phone Number</label>
+        <input name="attorneyPhone" type="number" id="attorneyPhone" placeholder="12169429360" class="input input-bordered w-full max-w-xs" />
+
+        <div class="form-control rounded-full shadow-md">
+            <label class="label cursor-pointer flex gap-3 text-slate-400 px-3">
+                <span class="label-text">
+                    Attorney ID Card Copy
+                </span> 
+                <input value="true" name="attorneyIdCardCopy" type="checkbox" class="checkbox checkbox-primary" />
+            </label>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-accent text-white mt-6">Add New Kreditor</button>
+</form>
+
+<%- include('../components/Footer') %>

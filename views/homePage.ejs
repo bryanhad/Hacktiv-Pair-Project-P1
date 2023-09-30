@@ -1,10 +1,36 @@
 <%- include('components/Header') %>
 
-<h1 class="text-2xl font-bold text-slate-600">INI HOME PAGE LOH</h1>
+<% if (locals.error) { %>
+    <p class="text-error mt-2 text-center animate__animated animate__shakeX"><%= locals.error %></p>
+<% } %>
 
-<%- include('components/LinkButton', {
-    to: '/login',
-    text: 'LOGIN'
-}) %>
+<div class="flex flex-col items-center mb-12">
+    <div class="text-4xl font-bold mb-4">PT RisolGulung Tbk</div>
+    <div class="max-w-3xl text-center mb-8 relative">
+        <img src="/images/quotes.png" class="max-w-[170px] absolute top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%] opacity-[8%]" alt="quotes logo">
+        <h2>Dengan diputusnya Putusan Majelis Hakim Pengadilan Niaga pada Pengadilan Negeri Jakarta Pusat,<br>Nomor : 47:Pdt.Sus/Pailit2023/PN.NIAGA.JKT.PST.<br>
+            dinyatakan bahwa PT RisolGulung Tbk berkedudukan dan beralamat di jalan RisolGede II No.12 RT.002 RW.015 Sukasuka, Tanggerang - Banten, dalam keadaan PAILIT dengan segala akibat hukumnya;</h2>
+    </div>
+    <a href="/details" class="bg-blue-500 text-white py-2 px-8 rounded-full transition duration-300 hover:bg-blue-700">Detail Perusahaan</a>
+</div>
+
+<div>
+    <div class="grid grid-cols-3 gap-8">
+        <% blogs.forEach(blog => { %>
+            <div class="col-span-1">
+                <%- include('components/blog', {
+                    blogId: blog.id,
+                    imageUrl: blog.imageUrl,
+                    title: blog.title,
+                    body: blog.body,
+                    profilePicture: blog.Trustee.profilePicture,
+                    writersName: blog.Trustee.fullName,
+                    createdDate: blog.createdDate,
+                    createdTime: blog.createdTime
+                }) %>
+            </div>
+        <% }) %>
+    </div>
+</div>
 
 <%- include('components/Footer') %>

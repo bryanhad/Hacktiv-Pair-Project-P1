@@ -1,0 +1,7 @@
+<% if (locals.trustee) { %>
+    <a href="/trustee/logout" class="btn btn-outline btn-error">LOGOUT</a>
+<% } else if (locals.admin) { %>
+    <a href="/admin/logout" class="btn btn-outline btn-error">LOGOUT ADMIN</a>
+    <% } else { %>
+    <a href="/login" class="btn btn-primary">LOGIN</a>
+<% } %>

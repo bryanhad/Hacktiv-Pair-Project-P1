@@ -1,0 +1,21 @@
+<a href="/blog/<%= blogId %>">
+    <article class="col-span-1 bg-white rounded-md transition duration-300 hover:shadow-xl shadow-md cursor-pointer hover:scale-[105%] flex flex-col h-full">
+        <!-- card Top -->
+        <div class="w-full h-[200px]">
+            <img class="object-cover h-full w-full" src="<%= imageUrl %>" alt="Blog Image">
+        </div>
+        <!-- card Body -->
+        <div class="flex flex-[1] flex-col p-4">
+            <div class="flex-[1] mb-4">
+                <h2 class="font-bold text-xl mb-2"><%= title %></h2>
+                <p class="text-slate-500 text-sm font-light maximum-2-line-of-text"><%= body %></p>
+            </div>
+            <%- include('WriterInfo', {
+                profilePicture,
+                name: writersName,
+                createdDate,
+                createdTime
+            }) %>
+        </div>
+    </article>
+</a>

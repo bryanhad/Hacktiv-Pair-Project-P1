@@ -1,0 +1,32 @@
+<!-- Navbar -->
+<nav class="navbar bg-base-100 shadow-md px-8">
+    <div class="flex-1">
+        <a href="/" class="btn btn-ghost normal-case text-xl">PT RisolGulung Tbk (dalam Pailit)</a>
+    </div>
+    <% if (!locals.inLogin) { %>
+        <% if (locals.user) { %>
+            <div class="flex gap-5">
+                
+                <% if (locals.user.isAdmin) { %>
+                    <a href="/admin" class="btn btn-primary">
+                        Admin Page
+                    </a>
+                <% } %>
+
+                <% const logoutUrl = locals.user.isAdmin ? 'admin/logout' : 'trustee/logout' %>
+                <%- include('ShowLoggedIn', {
+                    profilePicture: locals.user.profilePicture, 
+                    name: locals.user.username,
+                    profileUrl: '',
+                    logoutUrl: logoutUrl
+                }) %>
+            </div>
+        <% } else { %>
+            <%- include('LogoutButton') %>
+        <% } %>
+    <% } %>
+    
+    
+</nav>
+
+<!-- Main Content -->
